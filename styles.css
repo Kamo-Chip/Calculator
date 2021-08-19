@@ -3,49 +3,117 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;  
+  font-family: monospace;
+  font-weight: bold;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffd297;
 }
 
 h1{
     text-align: center;
+    position: fixed;
+    top: 0;
+    font-size: 3rem;
 }
 
 
 #container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-style: solid;
     border-color: black;
     border-width: 5px;
-
+    border-radius: 10px;
+    height: 33rem;
+    width: 22.5rem;
+    background-color: lightgrey;
 }
 
 #screen{
    display: flex;
    flex-direction: column-reverse;
+   border-width: 3px;
+   border-style: solid;
+   border-radius: 5px;
+   position: relative;
+   top: 1.5rem;
+   height: 8rem;
+   width: 20rem;
+   margin-bottom: 0;
+   font-size: 2rem;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   animation-name: startUp;
+   animation-duration: 3s;
+   animation-fill-mode: forwards;
+   
+}
+
+@keyframes startUp{
+    0%{
+        background-color: rgba(0, 0, 0, 0.753);
+        overflow: hidden;
+    }
+    100%{
+        background-color: rgba(113, 189, 199, 0.411);
+    }
 }
 
 #history{
-    height: 20px;
-    width: 200px;
+    height: 3rem;
+    width: inherit;
+    position: relative;
+    bottom: 1rem;
+    font-size: 1.5rem;
+    color: rgb(102, 97, 97);
 }
 
 #current{
-    height: 30px;
-    width: 200px;
+    height: 3rem;
+    width: inherit;
+    white-space: nowrap;
 }
 
 #button-div{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-                         
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    top: 4.5rem;       
+    height: 17rem;  
+    width: 20rem;
 }
 
 .buttons{
     border-radius: 0;
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
+    border-radius: 5px;
+    margin: 3px;
+    outline-style: none;
+    font-size: .85rem;
 }
 
 .buttons:hover{
     background-color: gray;
+    border-color: #000;
+    outline-style: none;
 }
 
+#del{
+    background-color: rgba(255, 68, 0, 0.712);
+}
+
+#del:hover{
+    background-color: rgba(255, 68, 0, 0.973);
+}
+
+#clear{
+    background-color: rgba(255, 68, 0, 0.712);
+}
+
+#clear:hover{
+    background-color: rgb(255, 68, 0);
+}
